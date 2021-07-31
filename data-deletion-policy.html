@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Custom CSS stylesheet -->
+
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/login.css" />
+
+    <!-- font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/efd71d3ed7.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Login</title>
+  </head>
+
+  <body>
+    <button onclick="topFunction()" id="myBtn" title="Go to top">🔝</button>
+    <!-- Navbar -->
+
+    <nav id="navbar_top" class="navbar navbar-expand-lg navbar-light">
+      <div class="container">
+        <a class="navbar-brand" href="/index.html">
+          <img src="./img/logos/logo.png" alt="img-logo"
+        /></a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarTogglerDemo02"
+          aria-controls="navbarTogglerDemo02"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+          <ul class="navbar-nav me-auto mr-2 mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/index.html"
+                >Home</a
+              >
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle active"
+                href="#"
+                id="navbarDarkDropdownMenuLink"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Our Products
+              </a>
+              <ul
+                class="dropdown-menu dropdown-menu-light dropdown-mobile"
+                aria-labelledby="navbarDarkDropdownMenuLink"
+              >
+                <!-- Products megadropdown -->
+                <div class="products-dropdown">
+                  <ul>
+                    <li class="dropdown-item">
+                      <div>
+                        <a href="https://www.arc.skygoal.education/"
+                          ><img src="./img/logos/Arc mini.png" alt="arc-logo"
+                        /></a>
+                      </div>
+
+                      <div class="description">
+                        <a href="https://www.arc.skygoal.education/"
+                          ><h5>ARC</h5></a
+                        >
+
+                        <p class="">
+                          ARC is a platform providing Academic <br />
+                          courses to the engineering, degree <br />
+                          students and other kinds of students.
+                        </p>
+                      </div>
+                    </li>
+
+                    <li class="dropdown-item">
+                      <div>
+                        <img
+                          src="./img/logos/Academy logo mini.png"
+                          alt="academy-logo"
+                        />
+                      </div>
+
+                      <div>
+                        <a href="https://www.academy.skygoal.education/">
+                          <h5>Academy</h5></a
+                        >
+
+                        <p>
+                          Subject specialist or veterans train<br />
+                          you with technical and personal <br />development
+                          skills to reach your goals.
+                        </p>
+                      </div>
+                    </li>
+
+                    <li class="dropdown-item">
+                      <div>
+                        <img
+                          src="./img/logos/Edu logo mini.png"
+                          alt="edu-news-logo"
+                        />
+                      </div>
+
+                      <div>
+                        <a href="https://news.skygoal.education/">
+                          <h5>Edu-News</h5></a
+                        >
+
+                        <p>
+                          Edu News is another informative tool <br />
+                          where the student has the privilege to <br />access
+                          the educational news.
+                        </p>
+                      </div>
+                    </li>
+                    <li class="dropdown-item">
+                      <div>
+                        <img
+                          src="./img/logos/Vasu Transparent.png"
+                          alt="vasu-img"
+                        />
+                      </div>
+
+                      <div>
+                        <a href="https://www.vasu.skygoal.education/">
+                          <h5>Vasu</h5></a
+                        >
+
+                        <p>
+                          Vasu is a virtual assistant providing<br />
+                          information regarding education<br />
+                          using AI
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                  <ul>
+                    <li class="dropdown-item">
+                      <div>
+                        <img
+                          src="./img/logos/Scholarships Logo.png"
+                          alt="Scholarship-img"
+                        />
+                      </div>
+
+                      <div>
+                        <a href="https://www.scholarships.skygoal.education/"
+                          ><h5>Scholarship</h5></a
+                        >
+
+                        <p>
+                          Scholarship is an online platform where<br />
+                          students around the world can seek <br />Scholarships
+                          to pursue their dreams.
+                        </p>
+                      </div>
+                    </li>
+                    <li class="dropdown-item">
+                      <div>
+                        <img
+                          src="./img/logos/Careers Transparent.png"
+                          alt="careers-img"
+                        />
+                      </div>
+
+                      <div>
+                        <a href="https://www.careers.skygoal.education/"
+                          ><h5>Careers</h5></a
+                        >
+
+                        <p>
+                          Careers is an online platform that allows
+                          <br />students to be employed for internships
+                          <br />and jobs.
+                        </p>
+                      </div>
+                    </li>
+                    <li class="dropdown-item">
+                      <div>
+                        <img
+                          src="./img/logos/Webinars Transparent.png"
+                          alt="webinar-img"
+                        />
+                      </div>
+
+                      <div>
+                        <a href="https://www.webinars.skygoal.education/">
+                          <h5>Webinars</h5></a
+                        >
+
+                        <p>
+                          Webinars is a platform providing <br />webinars on
+                          latest technologies by <br />industry experts around
+                          the world.
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle active"
+                href="#"
+                id="navbarDarkDropdownMenuLink"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                For Institutes
+              </a>
+              <ul
+                class="dropdown-menu dropdown-menu-light dropdown-mobile"
+                aria-labelledby="navbarDarkDropdownMenuLink"
+              >
+                <div class="institutes-dropdown">
+                  <ul>
+                    <li class="dropdown-item">
+                      <div>
+                        <img src="./img/assets/school.png" alt="" />
+                      </div>
+
+                      <div>
+                        <a href="/comingsoon.html"><h5>Digital Campus</h5></a>
+
+                        <p>
+                          Turn your campus to Digital with <br />
+                          Skygoal advanced solutions.
+                        </p>
+                      </div>
+                    </li>
+
+                    <li class="dropdown-item">
+                      <div>
+                        <img src="./img/assets/provision.png" alt="" />
+                      </div>
+
+                      <div>
+                        <a href="/comingsoon.html"> <h5>Enterprise Resources</h5></a>
+
+                        <p>
+                          Get end to end e-learning <br />
+                          resources.
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                  <ul>
+                    <li class="dropdown-item">
+                      <div>
+                        <img src="./img/assets/promotion.png" alt="" />
+                      </div>
+
+                      <div>
+                        <a href="/comingsoon.html"> <h5>E-Careers</h5></a>
+
+                        <p>
+                          Access millions of Jobs /Campus <br />
+                          drives with E-careers
+                        </p>
+                      </div>
+                    </li>
+                    <li class="dropdown-item">
+                      <div>
+                        <img src="./img/assets/aerial-advertising.png" alt="" />
+                      </div>
+
+                      <div>
+                        <a href="/comingsoon.html"> <h5>Advertising</h5></a>
+
+                        <p>
+                          Promote your campus to millions of <br />
+                          students across the Globe.
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </ul>
+            </li>
+
+            <!-- For companies -->
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle active"
+                href="#"
+                id="navbarDarkDropdownMenuLink"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                For Companies
+              </a>
+              <ul
+                class="dropdown-menu dropdown-menu-light dropdown-mobile"
+                aria-labelledby="navbarDarkDropdownMenuLink"
+              >
+                <div class="companies-dropdown">
+                  <ul>
+                    <li class="dropdown-item">
+                      <div>
+                        <img src="./img/assets/recruitment.png" alt="" />
+                      </div>
+
+                      <div>
+                        <a href="/comingsoon.html"><h5>Talent Solution</h5></a>
+                        <p>
+                          Hire talent from top universities &<br />
+                          colleges with our advanced AI Cloud<br />
+                          talent solutions.
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                  <ul>
+                    <li class="dropdown-item">
+                      <div>
+                        <img src="./img/assets/brand-identity.png" alt="" />
+                      </div>
+
+                      <div>
+                        <a href="/comingsoon.html"> <h5>Brand Awareness</h5></a>
+
+                        <p>
+                          Promote your vision to millions <br />
+                          of students and educators.
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                href="/comingsoon.html"
+                tabindex="-1"
+                aria-disabled="true"
+                >Careers</a
+              >
+            </li>
+          </ul>
+          <div class="login-signup">
+            <a
+              class="nav-link active"
+              style="color: black"
+              aria-current="page"
+              href="/login.html"
+              >Login</a
+            >
+
+            <a
+              class="nav-link btn btn-outline-primary btn-large sign-up"
+              href="/register.html"
+              >Get Started</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Navbar ends -->
+    <div class="intro" style="padding:30px;">
+        <h1>Data Deletion Policy</h1><br><br>
+      <ol>
+        <li>Purpose This document sets out our policy for responding to requests for deletion of data
+            under UK data protection law. This document explains the rights of the data subject in
+            relation to data deletion and the responsibilities of SKYGOALTECH in responding with such a
+            request.</li><br><br>
+        <li>Individual Rights An individual has the right to erasure, also known as ‘the right to be
+            forgotten’. The principle underpinning this right is to enable an individual to request the
+            deletion or removal of personal data where there is no compelling reason for its continued
+            processing</li><br><br>
+        <li>
+            When does the right to erasure apply? As stipulated in UK data protection law, individuals
+            have a right to have personal data erased and to prevent processing in specific
+            circumstances:<br><br>
+            <ul>
+                <li>Where the personal data is no longer necessary in relation to the purpose for which it
+                    was originally collected/processed</li><br>
+                <li>When the individual withdraws consent</li><br>
+                <li>When the individual objects to the processing and there is no other legal ground for the
+                    relevant processing activity</li><br>
+                <li>When the personal data was unlawfully processed</li><br>
+                <li>Where the personal data has to be erased in order to comply with a legal obligation.</li><br>
+            </ul><br><br>
+        </li>
+        <li>What information does SKYGOALTECH retain? The SKYGOALTECH online system
+            “Interlace” stores data about individuals in order to create a Team Role Report. We store
+            the name, e-mail address, gender, organisation/department (if provided) and subsequent
+            Team Role scores for each individual in order to create a report, which is stored on our
+            secure servers in the UK for a period of 90 days. This data is stored and used in accordance
+            with our Privacy Policy, which can be found at<br><br>
+            If consent is provided, personal data (including the above, plus address, telephone number
+            and notes) may be stored in our CRM system for the purposes of contacting you regarding
+            SKYGOALTECH news, products and promotions.</li><br><br>
+        <li>
+            How can data be deleted? If you have purchased a Team Role Report directly from
+            Skygoaltech, Skygoaltech acts as data controller. In this case, we will delete the Team Role
+            data (scores) upon request (via email to info@dskygoaltech.com), upon closure of your
+            account, or after three years. If an organization purchases access to the Skygoaltech Online
+            Account, Skygoaltech acts as the data processor and the customer acts as data controller.
+            In this case, it is the responsibility of the customer, as data controller, to ensure that data is
+            not held longer than necessary for the purposes for which it is intended. A user of the
+            Skygoaltech Online Account, acting on behalf of their organization, can delete data from
+            their Interlace system whenever they wish. This data is deleted from the system
+            immediately and cannot be recovered by any users or SKYGOALTECH employees after this
+            point. Data which has been deleted or otherwise destroyed cannot be recovered at any
+            time. Sufficient warning is given to the account administrator before data are permanently
+            deleted. Data may still remain in the systems back-up files, which will be deleted
+            periodically. Information may be deleted from our CRM upon request to
+            info@dskygoaltech.com. We undertake to perform the deletion within one month (30
+            calendar days) and will send you a confirmation once the information has been deleted.
+            Wherever possible, we will aim to complete the request in advance of the deadline
+        </li>
+      </ol><br><br>
+    
+    
+    
+    
+    </div>
+     <!-- footer -->
+
+     <footer id="end">
+        <div class="footer">
+          <div class="footer-goal">
+            <div class="skygoal-logo">
+              <img src="./img/logos/logo.png" alt="logo" />
+  
+              <p>
+                Sky Goal® is a technology innovation organization focused on the
+                design and development of Ed-tech solutions.
+              </p>
+            </div>
+  
+            <div class="social-media">
+              <a href="https://www.facebook.com/skygoalofficial">
+                <i class="fab fa-facebook fa-2x"></i>
+              </a>
+              <a href="https://www.instagram.com/skygoalofficial/">
+                <i class="fab fa-instagram fa-2x"></i>
+              </a>
+              <a href="https://www.linkedin.com/company/skygoal">
+                <i class="fab fa-linkedin fa-2x"></i>
+              </a>
+              <a href="https://www.youtube.com/channel/UCVT_wg2H3POR9ik_tppRXwQ">
+                <i class="fab fa-youtube fa-2x"></i>
+              </a>
+              <a href="https://twitter.com/skygoalofficial">
+                <i class="fab fa-twitter fa-2x"></i>
+              </a>
+            </div>
+          </div>
+          <div class="footer-our-products">
+            <h5>Our Products</h5>
+  
+            <a href="https://www.arc.skygoal.education/">ARC</a>
+            <a href="https://www.academy.skygoal.education/">Academy</a>
+            <a href="https://news.skygoal.education/">Edu-News</a>
+            <a href="https://www.vasu.skygoal.education/">Vasu</a>
+            <a href="https://www.scholarships.skygoal.education/">Scholarships</a>
+            <a href="https://www.careers.skygoal.education/">Careers</a>
+            <a href="https://www.webinars.skygoal.education/">Webinars</a>
+          </div>
+          <div class="footer-about-company">
+            <h5>About Company</h5>
+            <a href="/about.html">About us</a>
+            <a href="/contact.html">Contact Us</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Privacy policy</a>
+            <a href="#">Refund policy</a>
+            <a href="#">Cookies policy</a>
+          </div>
+          <div class="footer-contact-us">
+            <h5>Contact Us</h5>
+  
+            <!-- Contact details -->
+            <div class="contact-us">
+              <div>
+                <h6 style="margin-bottom: 20px">
+                  <i class="fas fa-map-marker-alt"></i> Address
+                </h6>
+                <h6>India</h6>
+                <a href="#">Vijaywada, Andrapradesh</a>
+  
+                <h6>United States</h6>
+                <a href="#"
+                  >16192 Coastal Highway Lewes, <br />
+                  DE 19958 United States</a
+                >
+              </div>
+              <div>
+                <h6><i class="fas fa-phone-alt"></i> Call</h6>
+                <a href="tel:18004193878">1800 41 93878</a>
+              </div>
+  
+              <div>
+                <h6><i class="fas fa-envelope"></i> Email</h6>
+                <a href="mailto:info@skygoal.education">info@skygoal.education</a>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <p
+          style="text-align: center; background: #fff; margin: 0; padding: 15px 0"
+        >
+          © All Rights Reserved 2021 <br />
+          CIN : U72900AP2018PTC109198
+        </p>
+      </footer>
+  
+      <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"
+      ></script>
+  
+      <script src="./js/index.js"></script>
+  
