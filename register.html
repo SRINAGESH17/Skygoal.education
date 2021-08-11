@@ -4,7 +4,11 @@
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
+     <!-- The core Firebase JS SDK is always required and must be listed first -->
+     <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-firestore.js"></script>
+     <script src="js/login.js"></script>
     <!-- Bootstrap CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
@@ -379,13 +383,13 @@
               class="nav-link active"
               style="color: black"
               aria-current="page"
-              href="/login.html"
+              href="login.html"
               >Login</a
             >
 
             <a
               class="nav-link btn btn-outline-primary btn-large sign-up"
-              href="/register.html"
+              href="register.html"
               >Get Started</a
             >
           </div>
@@ -418,11 +422,11 @@
         <h3>Create Account</h3>
 
         <div class="google-fb-login">
-          <a href="" class="btn btn-large">
+          <a href="" class="btn btn-large" onclick="googlepop()">
             <i class="fab fa-google fa-2x"></i> Sign up with Google
           </a>
 
-          <a href="" class="btn btn-large">
+          <a href="" class="btn btn-large" onclick="fbRedirect()">
             <i class="fab fa-facebook fa-2x"></i>Sign up with Facebook
           </a>
         </div>
@@ -455,7 +459,7 @@
                 class="form-control"
                 id="password"
                 placeholder="Password"
-                value=""
+                
               />
             </div>
 
@@ -468,7 +472,7 @@
             </div>
           </div>
 
-          <button class="btn btn-primary register-btn">Create Account</button>
+          <button class="btn btn-primary register-btn" type="button"onclick="signUp()">Create Account</button>
 
           <p>Already have an account ? <a href="/login.html">Login here</a></p>
         </form>
