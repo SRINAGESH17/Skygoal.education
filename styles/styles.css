@@ -11,10 +11,10 @@ body {
   /* background-color: #f2f8ff; */
   background-color: #e7f9ff;
   overflow-x: hidden;
-  background-image: url("/img/src/bluewave.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  /* background-position:; */
+  background-image:   url("/img/white-wave.png");
+  background-repeat: no-repeat ;
+  background-size: contain ;
+  background-position: bottom;
 }
  
 /* Go to top button */
