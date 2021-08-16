@@ -103,10 +103,10 @@ background: #1566d1;
   padding-top: 11px;
 }
 
-/* .sign-up:focus,
+.sign-up:focus,
 .sign-up:hover {
   color: white;
-} */
+}
 .login-signup {
   display: flex;
   justify-content: start;
