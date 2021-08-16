@@ -8,14 +8,15 @@ html {
 }
 body {
   font-family: "Poppins", sans-serif;
-  background-color: #f2f8ff;
+  /* background-color: #f2f8ff; */
+  background-color: #e7f9ff;
   overflow-x: hidden;
-  background-image: url('/img/white-wave.png');
+  background-image: url("/img/src/bluewave.png");
   background-repeat: no-repeat;
-  background-size: contain;
-  background-position:bottom;
+  background-size: cover;
+  /* background-position:; */
 }
-
+ 
 /* Go to top button */
 #myBtn {
   display: none;
@@ -93,19 +94,19 @@ body {
 }
 
 .sign-up {
-  /* background: #1566d1; */
-
-  border-radius: 100px;
+  
+background: #1566d1;
+  color: white;
   width: 130px;
   height: 50px;
-  color: rgb(0, 0, 0);
+  
   padding-top: 11px;
 }
 
-.sign-up:focus,
+/* .sign-up:focus,
 .sign-up:hover {
   color: white;
-}
+} */
 .login-signup {
   display: flex;
   justify-content: start;
@@ -113,37 +114,46 @@ body {
 }
 
 /* Navbar done */
+ /* Main */
+/* Left side */
 
-/* Main  */
-.hero {
-  display: flex;
-  margin-top: 5%;
-  padding: 0%;
-  justify-content: space-between;
-
-  align-items: center;
-
-  /* margin-bottom: 100px; */
+.left-side h1 {
+  font-size: 3rem;
 }
 
-.hero .left-side .intro-text span {
-  color: #3d80d9;
+.get-started-btn {
+  background: #2f80ed;
+  color: white;
+  padding: 15px 40px;
+  margin-top: 20px;
+  /* width: 200px; */
 }
-.hero .left-side .intro-text {
-  font-size: 3.5rem;
-
-  line-height: 1.1;
-  font-weight: 600;
-  color: #44484f;
+.get-started-btn:hover {
+  color: white;
 }
 
-/* CSS for carousel slider */
-div.carousel-inner {
-  height: 500px !important;
-  width: 450px;
+/* Right side */
 
-  /* margin: -80px auto 0 auto; */
+.main-img {
+  animation-name: floating;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
 }
+
+@keyframes floating {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(9px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
 
 /* Products */
 .products {
