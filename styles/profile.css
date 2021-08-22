@@ -1,0 +1,48 @@
+#edit-profile{
+    margin-top: 100px;
+}
+
+.details{
+    /* display: flex; */
+    /* justify-content: space-between; */
+    /* flex-wrap: wrap; */
+}
+
+.details > *{
+    flex:1;
+    padding: 20px 30px ;
+    /* flex-basis: 10%; */
+    /* background-color: aquamarine; */
+
+    
+}
+
+.profile-pic{
+    border:1px dashed rgba(47, 128, 237, 0.55);
+    text-align: center;
+    padding: 20px 30px;
+}
+
+label{
+    margin-top: 10px;
+}
+ 
+label.upload-pic{
+    cursor: pointer;display: block; text-decoration: none; color: #2f80ed;
+    
+}
+#submit-btn{
+/* flex: 100%;
+width: 40%; */
+}
+
+#pseudo-btn{
+    padding: 10px 100px;
+    margin-top: 30px;
+    background-color: #2F80ED;
+    border-radius: 10px;
+    float: right;
+    margin-right:30px;
+   /* position: relative; */
+    /* left: 79%; */
+}

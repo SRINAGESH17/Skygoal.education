@@ -4,11 +4,14 @@
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-     <!-- The core Firebase JS SDK is always required and must be listed first -->
-     <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>
+   <!-- The core Firebase JS SDK is always required and must be listed first -->
+
+       <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>
      <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
      <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-firestore.js"></script>
      <script src="js/login.js"></script>
+     
+
     <!-- Bootstrap CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
@@ -16,7 +19,7 @@
       integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
       crossorigin="anonymous"
     />
-    
+
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -27,15 +30,16 @@
 
     <!-- Custom CSS stylesheet -->
 
-    <link rel="stylesheet" href="styles/styles.css" />
-    <link rel="stylesheet" href="styles/login.css" />
+    <link rel="stylesheet" href="styles/navbar.css" />
+    <link rel="stylesheet" href="styles/profile.css" />
 
     <!-- font Awesome -->
     <script
       src="https://kit.fontawesome.com/efd71d3ed7.js"
       crossorigin="anonymous"
     ></script>
-    <title>Login</title>
+
+    <title>Profile</title>
   </head>
 
   <body>
@@ -44,8 +48,8 @@
 
     <nav id="navbar_top" class="navbar navbar-expand-lg navbar-light">
       <div class="container">
-        <a class="navbar-brand" href="index.html">
-          <img src="./img/logos/logo.png" alt="img-logo"
+        <a class="navbar-brand" href="/index.html">
+          <img src="./img/logos/logo.png" alt="logo"
         /></a>
 
         <button
@@ -148,10 +152,7 @@
                     </li>
                     <li class="dropdown-item">
                       <div>
-                        <img
-                          src="./img/logos/Vasu Transparent.png"
-                          alt="vasu-img"
-                        />
+                        <img src="./img/logos/Vasu Transparent.png" alt="" />
                       </div>
 
                       <div>
@@ -172,7 +173,7 @@
                       <div>
                         <img
                           src="./img/logos/Scholarships Logo.png"
-                          alt="Scholarship-img"
+                          alt="scholarship-logo"
                         />
                       </div>
 
@@ -192,7 +193,7 @@
                       <div>
                         <img
                           src="./img/logos/Careers Transparent.png"
-                          alt="careers-img"
+                          alt="career-logo"
                         />
                       </div>
 
@@ -212,7 +213,7 @@
                       <div>
                         <img
                           src="./img/logos/Webinars Transparent.png"
-                          alt="webinar-img"
+                          alt="webinar-logo"
                         />
                       </div>
 
@@ -270,7 +271,9 @@
                       </div>
 
                       <div>
-                        <a href="/comingsoon.html"> <h5>Enterprise Resources</h5></a>
+                        <a href="/comingsoon.html">
+                          <h5>Enterprise Resources</h5></a
+                        >
 
                         <p>
                           Get end to end e-learning <br />
@@ -378,272 +381,144 @@
             </li>
           </ul>
           <div class="login-signup">
-            <a
+            <a onclick="signOut()"
               class="nav-link active"
               style="color: black"
               aria-current="page"
-              href="login.html" id="login-btn"
-              >Login</a
+              href="/login.html"
+              id="login-btn"
+              
+              >Logout</a
             >
-
-            <a
-              class="nav-link btn btn-outline-primary btn-large sign-up"
-              href="register.html"
-              >Get Started</a
-            >
+<!-- 
+            <a class="nav-link btn btn-large sign-up" href="/register.html"
+              >Signup</a
+            > -->
           </div>
         </div>
       </div>
     </nav>
 
     <!-- Navbar ends -->
-    <!-- Login  -->
+    <div id="edit-profile" class="container">
+      <h3>Edit Profile</h3>
+      <p style="color: #aeaeae">Edit your profile to stay up to date</p>
 
-    <div class="login-screen container d-flex flex-column flex-lg-row align-items-center">
-      <div class="left-side">
-        <h2 >Welcome Back!</h2>
-        <p>
-          To login please enter your username and password or login with Google
-          or Facebook
-        </p>
-
-        <div class="google-fb-login">
-          <a href=""
-            ><button class="btn rounded" type="button" id="signG"onclick="googlepop()" >
-              <img class="img-fluid" src="./img/others/google-logo.ico" alt="google-logo"> 
-              Sign in with Google</button></a>
-
-          <a href=""
-            ><button class="btn rounded" type="button" id="signFB"onclick="fbRedirect()">
-              <i class="fab fa-facebook fa-2x"></i> Sign in with Facebook
-            </button>
-          </a>
-        </div>
-
-        <form class="row g-3" method="POST">
-          <h5><span>OR</span></h5>
-
-          <div class="col-12">
-            <input
-              type="email"
-              class="form-control"
-              id="lemail"
-              placeholder="E-mail Address"
-              name="email"
-              required
-            />
-          </div>
-
-          <div class="password-field">
-
-
-
-             <div class="" style="flex-basis:95%;">
-            <input
-              type="password"
-              class="form-control"
-              id="lpassword"
-              placeholder="Password"
-              
-              name="password"
-              
+      <form class="details d-flex flex-column flex-md-row">
+        <div class="profile-pic">
+          <img id="photo" src="img/src/profile.png" alt="profile-img" />
+          <label class="form-label upload-pic"
+            for="img"
              
-            />    
-
-           
-          </div>
-
-          <div class="showpass-icon">
-
-            <i class="far fa-eye-slash" onclick="myFunction()" id="togglePassword"></i>
-
-          </div>
-          </div>
-
-         
-
-          <div class="remember-box">
-
-             <div class="col-md-6">
-            <input type="checkbox" />
-            Remember Me
-          </div>
-          <div class="col-md-6">
-          <a href="#" style="text-decoration:none;">Forgot your password ?</a>
-          </div>
-          </div>
-         
-
-          <div class="col-12">
-            <button class="btn btn-primary login-btn" onclick="signIn()" type="button">Login</button>
-          </div>
-        </form>
-
-<p style="text-align: left;margin-top: 30px;">Don't have an account ? <a style="text-decoration: none;" href="/register.html">Register here</a>
-</p>
-
-      </div>
-
-      <div class="right-side">
-        <img
-          class="img-fluid"
-          src="./img/others/login-img.png"
-          alt="login-img"
-        />
-      </div>
-    </div>
-
-    <div class="newsletter">
-      <h5>
-        <span style="text-decoration: underline">Su</span>bscribe to Our
-        Newsletter
-      </h5>
-      <!-- newsletter form -->
-      <form action="" id="newsletter-form">
-        <div class="rounded shadow-sm mb-4">
-          <div class="input-group">
-            <input
-              id="newsletter-input"
-              type="email"
-              placeholder="Enter your Email"
-              class="form-control border-0 bg-light shadow-none"
-            />
-
-            <div class="input-group-append">
-              <button
-                id="button-addon1"
-                type="submit"
-                class="btn btn-link text-light shadow-none"
-                style="text-decoration: none; background-color: #1566d1"
-              >
-                Submit
-              </button>
-            </div>
-          </div>
+            ><i class="fas fa-upload"></i> Update Profile Picture</label
+          >
+          <input type="file" id="img" name="img" accept="image/*" hidden />
         </div>
+        <div class="">
+          <label for="name" class="form-label fw-bold">Name</label>
+          <input id="name" class="form-control" type="text" required/>
+          <label for="email" class="form-label fw-bold">E-mail ID</label>
+          <input id="email" class="form-control" type="email" required/>
+        </div>
+        <div>
+          <label for="surname" class="form-label fw-bold">Surname</label>
+          <input id="surname" class="form-control" type="text" required/>
+          <label for="mobile" class="form-label fw-bold">Mobile Number</label>
+          <input id="mobile" class="form-control" type="tel" required/>
+        </div>
+ 
+        <button hidden id="submit-btn" style="display: block;" type="submit" class="btn btn-primary" >Save</button>
       </form>
+
+      <button id="pseudo-btn" onclick="fun()" style="display: block;" type="submit" class="btn btn-primary" >Save</button>
     </div>
+  
+ 
 
-    <!-- footer -->
-
-    <footer id="end">
-      <div class="footer">
-        <div class="footer-goal">
-          <div class="skygoal-logo">
-            <img src="./img/logos/logo.png" alt="logo" />
-
-            <p>
-              Sky Goal® is a technology innovation organization focused on the
-              design and development of Ed-tech solutions.
-            </p>
-          </div>
-
-          <div class="social-media">
-            <a href="https://www.facebook.com/skygoalofficial">
-              <i class="fab fa-facebook fa-2x"></i>
-            </a>
-            <a href="https://www.instagram.com/skygoalofficial/">
-              <i class="fab fa-instagram fa-2x"></i>
-            </a>
-            <a href="https://www.linkedin.com/company/skygoal">
-              <i class="fab fa-linkedin fa-2x"></i>
-            </a>
-            <a href="https://www.youtube.com/channel/UCVT_wg2H3POR9ik_tppRXwQ">
-              <i class="fab fa-youtube fa-2x"></i>
-            </a>
-            <a href="https://twitter.com/skygoalofficial">
-              <i class="fab fa-twitter fa-2x"></i>
-            </a>
-          </div>
-        </div>
-        <div class="footer-our-products">
-          <h5>Our Products</h5>
-
-          <a href="https://www.arc.skygoal.education/">ARC</a>
-          <a href="https://www.academy.skygoal.education/">Academy</a>
-          <a href="https://news.skygoal.education/">Edu-News</a>
-          <a href="https://www.vasu.skygoal.education/">Vasu</a>
-          <a href="https://www.scholarships.skygoal.education/">Scholarships</a>
-          <a href="https://www.careers.skygoal.education/">Careers</a>
-          <a href="https://www.webinars.skygoal.education/">Webinars</a>
-        </div>
-        <div class="footer-about-company">
-          <h5>About Company</h5>
-          <a href="/about.html">About us</a>
-          <a href="/contact.html">Contact Us</a>
-          <a href="#">Terms & Conditions</a>
-          <a href="#">Privacy policy</a>
-          <a href="#">Refund policy</a>
-          <a href="#">Cookies policy</a>
-        </div>
-        <div class="footer-contact-us">
-          <h5>Contact Us</h5>
-
-          <!-- Contact details -->
-          <div class="contact-us">
-            <div>
-              <h6 style="margin-bottom: 20px">
-                <i class="fas fa-map-marker-alt"></i> Address
-              </h6>
-              <h6>India</h6>
-              <a href="#">Vijaywada, Andrapradesh</a>
-
-              <h6>United States</h6>
-              <a href="#"
-                >16192 Coastal Highway Lewes, <br />
-                DE 19958 United States</a
-              >
-            </div>
-            <div>
-              <h6><i class="fas fa-phone-alt"></i> Call</h6>
-              <a href="tel:18004193878">1800 41 93878</a>
-            </div>
-
-            <div>
-              <h6><i class="fas fa-envelope"></i> Email</h6>
-              <a href="mailto:info@skygoal.education">info@skygoal.education</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <p
-        style="text-align: center; background: #fff; margin: 0; padding: 15px 0"
-      >
-        © All Rights Reserved 2021 <br />
-        CIN : U72900AP2018PTC109198
-      </p>
-    </footer>
-
+     
+    <!-- script for bootstrap -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
       crossorigin="anonymous"
     ></script>
 
-    <script src="./js/index.js"></script>
-
-
+    <script src="/js/index.js"></script>
     <script>
+      // way to click original button using Pseudo Button
+
+
+      function fun() {
+        document.getElementById("submit-btn").click();
+      }
+
+
+
+
+
+
+    </script>
+
+
+<script>
+
+
+  
+
+
+
+
+
+var user = firebase.auth().onAuthStateChanged(function (user) {
+  if (user) {
+    
+
+    // empty fill the fields which are undefined
+    if (user.displayName == null) {
+      document.getElementById("name").value = "";
+    }
+    else {
+      document.getElementById("name").value = user.displayName;
+    }
+    if(document.getElementById("surname").value==null){
+      document.getElementById("surname").value = "";
+
+    }
+
+    if (user.email == null) {
+      document.getElementById("email").value = "";
+    }
+    else {
+      document.getElementById("email").value = user.email;
+    }
+
+    if (user.phoneNumber == null) {
+      document.getElementById("mobile").value = "";
+    }
+    else {
+      document.getElementById("mobile").value = user.phoneNumber;
+    }
+
+    if (user.photoURL == null) {
+      document.getElementById("photo").src = "img/src/profile.png";
+    }
+    else {
+      document.getElementById("photo").src = user.photoURL;
+    }
+
 
 
  
-              function myFunction() {
-                var x = document.getElementById("password");
-                var showpassIcon = document.querySelector("#togglePassword") ;
+  
+  }
 
-                showpassIcon.classList.toggle("fa-eye");
-                showpassIcon.classList.toggle("fa-eye-slash");
+else{
 
-                if (x.type === "password") {
-                  x.type = "text";
-                } else {
-                  x.type = "password";
-                }
-              }
-            
-    </script>
+  window.location.href = "/login.html";
+}});
    
+</script>
+
 
 
   </body>
