@@ -4,13 +4,13 @@
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-   <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
 
-       <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>
-     <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
-     <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-firestore.js"></script>
-     <script src="js/login.js"></script>
-     
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="js/login.js"></script>
 
     <!-- Bootstrap CSS -->
     <link
@@ -381,17 +381,21 @@
             </li>
           </ul>
           <div class="login-signup">
-            <a onclick="signOut()"
+            <!-- profile button -->
+            <!-- <a style="display: none;" class="nav-link profile-btn" href="/profile.html"
+              >Profile</a
+            > -->
+            <a
+              onclick="signOut()"
               class="nav-link active"
               style="color: black"
               aria-current="page"
-              href="/login.html"
+              href="#"
               id="login-btn"
-              
               >Logout</a
             >
-<!-- 
-            <a class="nav-link btn btn-large sign-up" href="/register.html"
+            
+            <!-- <a class="nav-link btn btn-large sign-up" href="/register.html"
               >Signup</a
             > -->
           </div>
@@ -407,35 +411,46 @@
       <form class="details d-flex flex-column flex-md-row">
         <div class="profile-pic">
           <img id="photo" src="img/src/profile.png" alt="profile-img" />
-          <label class="form-label upload-pic"
-            for="img"
-             
+          <label class="form-label upload-pic" for="img"
             ><i class="fas fa-upload"></i> Update Profile Picture</label
           >
           <input type="file" id="img" name="img" accept="image/*" hidden />
         </div>
         <div class="">
           <label for="name" class="form-label fw-bold">Name</label>
-          <input id="name" class="form-control" type="text" required/>
+          <input id="name" class="form-control" type="text" required />
           <label for="email" class="form-label fw-bold">E-mail ID</label>
-          <input id="email" class="form-control" type="email" required/>
+          <input id="email" class="form-control" type="email" required />
         </div>
         <div>
           <label for="surname" class="form-label fw-bold">Surname</label>
-          <input id="surname" class="form-control" type="text" required/>
+          <input id="surname" class="form-control" type="text" required />
           <label for="mobile" class="form-label fw-bold">Mobile Number</label>
-          <input id="mobile" class="form-control" type="tel" required/>
+          <input id="mobile" class="form-control" type="tel" required />
         </div>
- 
-        <button hidden id="submit-btn" style="display: block;" type="submit" class="btn btn-primary" >Save</button>
+
+        <button
+          hidden
+          id="submit-btn"
+          style="display: block"
+          type="submit"
+          class="btn btn-primary"
+        >
+          Save
+        </button>
       </form>
 
-      <button id="pseudo-btn" onclick="fun()" style="display: block;" type="submit" class="btn btn-primary" >Save</button>
+      <button
+        id="pseudo-btn"
+        onclick="fun()"
+        style="display: block"
+        type="submit"
+        class="btn btn-primary"
+      >
+        Save
+      </button>
     </div>
-  
- 
 
-     
     <!-- script for bootstrap -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
@@ -447,79 +462,62 @@
     <script>
       // way to click original button using Pseudo Button
 
+      var userCopy;
 
+      document
+        .getElementById("submit-btn")
+        .addEventListener("click", function (e) {
+          e.preventDefault();
+          writeUserData(userCopy);
+        });
       function fun() {
         document.getElementById("submit-btn").click();
       }
-
-
-
-
-
-
     </script>
 
+    <script>
+      var user = firebase.auth().onAuthStateChanged(function (user) {
+        if (user) {
+          userCopy = user;
 
-<script>
+          // setting the image
+          if (user.photoURL == null) {
+            document.getElementById("photo").src = "img/src/profile.png";
+          } else {
+            document.getElementById("photo").src = user.photoURL;
+          }
 
+          // Get and Fill details from Realtime database except photo
+          getData(user);
+        } else {
+          window.location.href = "/login.html";
+        }
+      });
 
-  
+      function fillDefault(user) {
+        // this function fill data as received from Firestore Database in the form
 
+        if (user.displayName == null) {
+          document.getElementById("name").value = "";
+        } else {
+          document.getElementById("name").value = user.displayName;
+        }
+        if (document.getElementById("surname").value == null) {
+          document.getElementById("surname").value = "";
+        }
 
+        if (user.email == null) {
+          document.getElementById("email").value = "";
+        } else {
+          document.getElementById("email").value = user.email;
+        }
 
-
-
-var user = firebase.auth().onAuthStateChanged(function (user) {
-  if (user) {
-    
-
-    // empty fill the fields which are undefined
-    if (user.displayName == null) {
-      document.getElementById("name").value = "";
-    }
-    else {
-      document.getElementById("name").value = user.displayName;
-    }
-    if(document.getElementById("surname").value==null){
-      document.getElementById("surname").value = "";
-
-    }
-
-    if (user.email == null) {
-      document.getElementById("email").value = "";
-    }
-    else {
-      document.getElementById("email").value = user.email;
-    }
-
-    if (user.phoneNumber == null) {
-      document.getElementById("mobile").value = "";
-    }
-    else {
-      document.getElementById("mobile").value = user.phoneNumber;
-    }
-
-    if (user.photoURL == null) {
-      document.getElementById("photo").src = "img/src/profile.png";
-    }
-    else {
-      document.getElementById("photo").src = user.photoURL;
-    }
-
-
-
- 
-  
-  }
-
-else{
-
-  window.location.href = "/login.html";
-}});
-   
-</script>
-
-
-
+        if (user.phoneNumber == null) {
+          document.getElementById("mobile").value = "";
+        } else {
+          document.getElementById("mobile").value = user.phoneNumber;
+        }
+      }
+    </script>
   </body>
 </html>
