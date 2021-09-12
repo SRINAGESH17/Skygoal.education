@@ -1,2 +1,2 @@
 # Skygoal.eduaction
-skygoal.education
+https://skygoal.education
